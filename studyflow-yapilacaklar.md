@@ -1,0 +1,73 @@
+# StudyFlow Yapilacaklar Listesi
+
+## Tamamlananlar
+- [x] 1. Gorev (T001): Next.js + TypeScript projesi kuruldu (`studyflow`)
+- [x] 2. Gorev (T002): Tailwind tabanli temel UI iskeleti ve tekrar kullanilabilir kart componenti eklendi
+
+## Siradaki Oncelikli Isler (MVP)
+- [x] 3. Gorev (T003): Backend secimi ve ilk servis baslatma (Next.js API Route ile)
+- [x] 4. Gorev (T004): Veri modeli ve tablo/sema kurulumlari (Prisma + migration + db ping)
+- [x] 5. Gorev (T005): Google OAuth giris akisi (NextAuth + Google provider)
+- [x] 6. Gorev (T006): Dashboard sinav kartlari + sinav listesi API baglantisi
+- [x] 7. Gorev (T007): Canli geri sayim widgetini client tarafinda periyodik guncelleme ile tamamlama
+- [x] 8. Gorev (T008): "Hizlanmalisin" acil durum gostergesi (kalan sure / kalan konu)
+- [x] 9. Gorev (T009): Sinav ekleme formu
+- [x] 10. Gorev (T010): Konu ekleme/duzenleme akisi
+- [x] 11. Gorev (T011): Plan slot modeli (study_sessions) ve kalici kayit
+- [x] 12. Gorev (T012): Onceliklendirme algoritmasi v1 (sinav tarihi + priority carpani)
+- [x] 13. Gorev (T013): Deadline gorevlerini plana serpiştirme
+- [x] 14. Gorev (T014): Plan olusturma servis API'si ve listeleme endpoint'i
+- [x] 15. Gorev (T015): Kanal beyaz listesi CRUD
+- [x] 16. Gorev (T016): YouTube API entegrasyonu
+- [x] 17. Gorev (T017): Kanal filtreleme mantigi
+- [x] 18. Gorev (T018): Videoyu calisma seansina baglama
+- [x] 19. Gorev (T019): YouTube sorgu performansi (cache + sure olcumu)
+- [x] 20. Gorev (T020): ICS export
+- [x] 21. Gorev (T021): Google Calendar export
+- [x] 22. Gorev (T022): Takvim senkron modu ayarlari (NONE/ONE_WAY/TWO_WAY)
+- [x] 23. Gorev (T023): Konu tamamlama + 1-5 guven puani girisi
+- [x] 24. Gorev (T024): Dusuk puanda (+3 gun) tekrar seansi
+- [x] 25. Gorev (T025): 1-7-30 gun spaced repetition
+- [x] 26. Gorev (T026): 15 dakikalik hizli hatirlatma bloklari
+- [x] 27. Gorev (T027): Odak modu ekrani
+- [x] 28. Gorev (T028): 25+5 pomodoro sayaci
+- [x] 29. Gorev (T029): Seans icinde YouTube video oynatma
+- [x] 30. Gorev (T030): Bugun tamamlayamadim (catch-up tetikleme)
+- [x] 31. Gorev (T031): Kalan yuku yeniden dagitma
+- [x] 32. Gorev (T032): Responsive duzen
+- [x] 33. Gorev (T033): E2E test altyapisi
+- [x] 34. Gorev (T034): Performans metriklerini olcme ve raporlama paneli
+- [x] 35. Gorev (T035): Hata yonetimi (API + global error ekrani)
+- [x] 36. Gorev (T036): Sinav formunda oncelik + gunluk saat alani
+- [x] 37. Gorev (T037): Deadline gorev formu (sure + bagli ders)
+- [x] 38. Gorev (T038): Dashboard kartindan plan detayina gecis
+- [x] 39. Gorev (T039): Coklu sinav cakisma dengeleme
+- [x] 40. Gorev (T040): Haftalik ozet plan gorunumu
+- [x] 41. Gorev (T041): Oturum duzenleme (tarih/sure)
+- [x] 42. Gorev (T042): Oturum bazli 5 dk mola onerisi
+- [x] 43. Gorev (T043): Kanal URL/adindan channelId cozumleme
+- [x] 44. Gorev (T044): Sonuc siralama (yakinlik + recency skoru)
+- [x] 45. Gorev (T045): Video kart detaylari (sure/skor)
+- [x] 46. Gorev (T046): Surukle-birak ile seansa video baglama
+- [x] 47. Gorev (T047): Video suresi > oturum suresi uyarisi
+- [x] 48. Gorev (T048): YouTube kota fallback (stale cache)
+- [x] 49. Gorev (T049): Takvim event baslik standardi
+- [x] 50. Gorev (T050): Event aciklamasina video ve not ekleme
+- [x] 51. Gorev (T051): Toplu takvim aktarimi
+- [x] 52. Gorev (T052): Tekli seans takvim aktarimi
+- [x] 53. Gorev (T053): Sinava 7/3/1 gun kala tarayici bildirimi
+- [x] 54. Gorev (T054): Gunluk oturum baslangic hatirlaticisi
+- [x] 55. Gorev (T055): Akilli telafi onerisi popup
+- [x] 56. Gorev (T056): Kalan sure yetmiyorsa erken uyari
+- [x] 57. Gorev (T057): Haftalik toplam calisma saati grafigi
+- [x] 58. Gorev (T058): Ders bazli zaman dagilimi grafigi
+- [x] 59. Gorev (T059): Hedeflenen vs gerceklesen oturum karsilastirmasi
+- [x] 60. Gorev (T060): Streak sayaci
+- [x] 61. Gorev (T061): Storage karar kaydi (ADR)
+- [x] 62. Gorev (T062): Teknoloji yigini standartlastirma (ADR + README)
+- [x] 63. Gorev (T063): Performans butcesi ve kontrol scripti
+- [x] 64. Gorev (T064): Minimum kabul test paketi
+
+## Bu Haftalik Hedef
+- [x] Sinav ekleme + konu ekleme + geri sayim goruntuleme akisini uctan uca calistirmak
+- [x] MVP kalan gorevlerini tamamlama

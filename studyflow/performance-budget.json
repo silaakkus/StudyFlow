@@ -1,0 +1,8 @@
+{
+  "pageLoadBudgetMs": 3000,
+  "apiBudgetsMs": {
+    "youtube_search_avg": 3000,
+    "plan_generate_avg": 3000,
+    "calendar_export_avg": 5000
+  }
+}
