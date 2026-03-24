@@ -62,7 +62,9 @@ export const GET = async () => {
       },
     })
 
-    const payload = exams.map((exam) => ({
+    type ExamItem = (typeof exams)[number]
+
+    const payload = exams.map((exam: ExamItem) => ({
       id: exam.id,
       subject: exam.subjectName,
       date: exam.examDate.toISOString(),
