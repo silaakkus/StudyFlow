@@ -1,7 +1,7 @@
 export const dynamic = 'force-dynamic';
 
 import { NextResponse } from "next/server"
-import { getPrisma } from "@/lib/prisma"
+import { prisma } from "@/lib/prisma" // ✅ getPrisma yerine prisma
 import { getDemoUser } from "@/lib/demo-user"
 
 const startOfDay = (date: Date) => {
@@ -12,7 +12,7 @@ const startOfDay = (date: Date) => {
 
 export const GET = async () => {
   try {
-    const prisma = getPrisma(); // ✅ BURADA
+    // const prisma = getPrisma(); // ❌ artık gerek yok, prisma import edildi
 
     const user = await getDemoUser()
     const today = startOfDay(new Date())
