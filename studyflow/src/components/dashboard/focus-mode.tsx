@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useMemo, useState } from "react"
+import { useEffect, useMemo, useRef, useState } from "react"
 
 type PlanSession = {
   id: string
@@ -24,12 +24,17 @@ export const FocusMode = ({ sessions }: { sessions: PlanSession[] }) => {
   const [isBreak, setIsBreak] = useState(false)
   const [isRunning, setIsRunning] = useState(false)
 
+  const isBreakRef = useRef(isBreak)
+  useEffect(() => {
+    isBreakRef.current = isBreak
+  }, [isBreak])
+
   useEffect(() => {
     if (!isRunning) return
     const id = window.setInterval(() => {
       setSecondsLeft((previous) => {
         if (previous <= 1) {
-          const nextIsBreak = !isBreak
+          const nextIsBreak = !isBreakRef.current
           setIsBreak(nextIsBreak)
           return nextIsBreak ? 5 * 60 : 25 * 60
         }
@@ -37,7 +42,7 @@ export const FocusMode = ({ sessions }: { sessions: PlanSession[] }) => {
       })
     }, 1000)
     return () => window.clearInterval(id)
-  }, [isRunning, isBreak])
+  }, [isRunning])
 
   const activeSessionId = selectedSessionId || sessions[0]?.id || ""
   const selectedSession = useMemo(

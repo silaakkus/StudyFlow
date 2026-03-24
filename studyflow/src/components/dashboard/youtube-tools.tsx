@@ -242,7 +242,10 @@ export const YoutubeTools = () => {
         onDragOver={(event) => event.preventDefault()}
         onDrop={(event) => {
           event.preventDefault()
-          if (draggingVideoUrl) handleAttachVideo(draggingVideoUrl)
+          if (draggingVideoUrl) {
+            handleAttachVideo(draggingVideoUrl)
+            setDraggingVideoUrl("")
+          }
         }}
       >
         <p className="text-xs text-zinc-600">Video kartini buraya birakirsan secili seansa eklenir</p>

@@ -25,9 +25,13 @@ const dayDiff = (dateIso: string) => {
 export const AlertsCenter = () => {
   const [exams, setExams] = useState<ExamItem[]>([])
   const [sessions, setSessions] = useState<SessionItem[]>([])
-  const [permission, setPermission] = useState<NotificationPermission>(() =>
-    typeof Notification !== "undefined" ? Notification.permission : "default"
-  )
+  const [permission, setPermission] = useState<NotificationPermission>("default")
+
+  useEffect(() => {
+    if (typeof Notification !== "undefined") {
+      setPermission(Notification.permission)
+    }
+  }, [])
   const [message, setMessage] = useState("")
 
   useEffect(() => {
