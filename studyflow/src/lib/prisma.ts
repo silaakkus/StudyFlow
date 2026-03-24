@@ -19,3 +19,6 @@ export function getPrisma() {
 
   return globalForPrisma.prisma
 }
+
+// 🔥 BUNU EKLE (KRİTİK)
+export const prisma = getPrisma();
