@@ -25,7 +25,9 @@ export const POST = async () => {
       },
     })
 
-    const carryTasks = pendingToday.map((session) => ({
+    type SessionItem = (typeof pendingToday)[number]
+
+    const carryTasks = pendingToday.map((session: SessionItem) => ({
       userId: user.id,
       title: `Telafi: ${session.id.slice(0, 6)}`,
       deadlineDate: new Date(Date.now() + 3 * 24 * 60 * 60 * 1000),
@@ -59,10 +61,13 @@ export const POST = async () => {
     })
 
     const newPlan = generatePlan(exams, tasks)
+
+    type PlanItem = (typeof newPlan)[number]
+
     await prisma.studySession.createMany({
       data: newPlan
-        .filter((session) => Boolean(session.examId))
-        .map((session) => ({
+        .filter((session: PlanItem) => Boolean(session.examId))
+        .map((session: PlanItem) => ({
           userId: user.id,
           examId: session.examId,
           topicId: session.topicId,
