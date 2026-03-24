@@ -12,7 +12,7 @@ const startOfDay = (date: Date) => {
 
 export const GET = async () => {
   try {
-    // const prisma = getPrisma(); // ❌ artık gerek yok, prisma import edildi
+    //  // ❌ artık gerek yok, prisma import edildi
 
     const user = await getDemoUser()
     const today = startOfDay(new Date())
