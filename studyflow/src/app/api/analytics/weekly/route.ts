@@ -1,5 +1,7 @@
+export const dynamic = 'force-dynamic';
+
 import { NextResponse } from "next/server"
-import { prisma } from "@/lib/prisma"
+import { getPrisma } from "@/lib/prisma"
 import { getDemoUser } from "@/lib/demo-user"
 
 const startOfDay = (date: Date) => {
@@ -10,6 +12,8 @@ const startOfDay = (date: Date) => {
 
 export const GET = async () => {
   try {
+    const prisma = getPrisma(); // ✅ BURADA
+
     const user = await getDemoUser()
     const today = startOfDay(new Date())
     const sevenDaysAgo = new Date(today)
@@ -41,7 +45,10 @@ export const GET = async () => {
       if (session.isCompleted) completedMinutes += session.durationMinutes
     }
 
-    const completionRate = plannedMinutes > 0 ? Number(((completedMinutes / plannedMinutes) * 100).toFixed(1)) : 0
+    const completionRate =
+      plannedMinutes > 0
+        ? Number(((completedMinutes / plannedMinutes) * 100).toFixed(1))
+        : 0
 
     return NextResponse.json(
       {
