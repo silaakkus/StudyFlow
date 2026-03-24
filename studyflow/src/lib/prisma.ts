@@ -1,3 +1,5 @@
+// src/lib/prisma.ts
+
 import { PrismaClient } from "@prisma/client"
 
 const globalForPrisma = globalThis as unknown as {
@@ -10,15 +12,15 @@ export function getPrisma() {
       throw new Error("DATABASE_URL tanımlı değil")
     }
 
-    globalForPrisma.prisma = new PrismaClient({
-      datasources: {
-        db: { url: process.env.DATABASE_URL },
-      },
-    })
+    // ❌ eskisi: datasources override
+    // globalForPrisma.prisma = new PrismaClient({ datasources: { db: { url: process.env.DATABASE_URL } } });
+
+    // ✅ yeni: env variable ile normal init
+    globalForPrisma.prisma = new PrismaClient();
   }
 
-  return globalForPrisma.prisma
+  return globalForPrisma.prisma;
 }
 
-// 🔥 BUNU EKLE (KRİTİK)
+// Legacy import’lar için named export
 export const prisma = getPrisma();
