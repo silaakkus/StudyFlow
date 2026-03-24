@@ -17,7 +17,7 @@ export const GET = async () => {
     })
 
     const ics = createIcsFile(
-      sessions.map((session) => {
+      sessions.map((session: any) => {
         const start = new Date(session.date)
         const end = new Date(session.date.getTime() + session.durationMinutes * 60 * 1000)
         return {
