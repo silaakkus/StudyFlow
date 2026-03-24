@@ -1,9 +1,12 @@
+// ZORUNLU: Prisma Node.js runtime gerektiriyor
+export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
 
 import { NextResponse } from "next/server"
-import { prisma } from "@/lib/prisma" // ✅ getPrisma yerine prisma
+import { prisma } from "@/lib/prisma"
 import { getDemoUser } from "@/lib/demo-user"
 
+// ... geri kalan kod aynı
 const startOfDay = (date: Date) => {
   const value = new Date(date)
   value.setHours(0, 0, 0, 0)
@@ -12,8 +15,6 @@ const startOfDay = (date: Date) => {
 
 export const GET = async () => {
   try {
-    //  // ❌ artık gerek yok, prisma import edildi
-
     const user = await getDemoUser()
     const today = startOfDay(new Date())
     const sevenDaysAgo = new Date(today)
