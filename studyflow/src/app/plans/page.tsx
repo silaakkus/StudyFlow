@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import { useEffect, useState, Suspense } from "react"
 import { useSearchParams } from "next/navigation"
 
 type SessionItem = {
@@ -12,7 +12,8 @@ type SessionItem = {
   isCompleted: boolean
 }
 
-const PlansPage = () => {
+// 1. Asıl mantığı "PlansContent" isimli bir alt bileşene aldık
+const PlansContent = () => {
   const [sessions, setSessions] = useState<SessionItem[]>([])
   const [isLoading, setIsLoading] = useState(true)
   const searchParams = useSearchParams()
@@ -53,4 +54,15 @@ const PlansPage = () => {
   )
 }
 
-export default PlansPage
+// 2. Ana sayfa artık bu "PlansContent"i Suspense ile sarmalıyor
+export default function PlansPage() {
+  return (
+    <Suspense fallback={
+      <div className="flex min-h-screen items-center justify-center">
+        <p className="text-zinc-500">Sayfa hazırlanıyor...</p>
+      </div>
+    }>
+      <PlansContent />
+    </Suspense>
+  )
+}
