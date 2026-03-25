@@ -117,15 +117,23 @@ export default function Home() {
           <PlanGenerator />
         </section>
         <DashboardContent />
-        <YoutubeTools />
-        <CalendarTools />
+        <section id="youtube-tools" className="scroll-mt-24">
+          <YoutubeTools />
+        </section>
+        <section id="calendar-tools" className="scroll-mt-24">
+          <CalendarTools />
+        </section>
         <section id="focus-mode" className="scroll-mt-24">
           <TopicReviewTools />
         </section>
         <WeeklySummaryPanel />
-        <AlertsCenter />
-        <AnalyticsPanel />
-        <PerformancePanel />
+        <div id="alerts-center" className="scroll-mt-24">
+          <AlertsCenter />
+        </div>
+        <div id="analytics-panel" className="scroll-mt-24">
+          <AnalyticsPanel />
+          <PerformancePanel />
+        </div>
 
         <footer className="relative overflow-hidden rounded-3xl border border-white/40 bg-white/35 p-5 shadow-2xl backdrop-blur-xl">
           <div className="pointer-events-none absolute inset-0 rounded-3xl bg-gradient-to-br from-white/30 via-transparent to-violet-200/20" />
@@ -138,8 +146,8 @@ export default function Home() {
             </div>
 
             <div className="mt-4 grid grid-cols-1 gap-2 text-sm md:grid-cols-2">
-              <button
-                type="button"
+              <a
+                href="#exam-form"
                 className="micro-button rounded-xl border border-white/50 bg-white/55 px-3 py-3 text-left text-zinc-700 backdrop-blur transition hover:bg-white/75"
               >
                 <p className="flex items-center gap-2 font-semibold text-zinc-900">
@@ -149,9 +157,9 @@ export default function Home() {
                 <p className="mt-1 text-xs text-zinc-600">
                   Sinav ve konu listeni gir, sistem hedef tarihe gore otomatik calisma akisi olustursun.
                 </p>
-              </button>
-              <button
-                type="button"
+              </a>
+              <a
+                href="#focus-mode"
                 className="micro-button rounded-xl border border-white/50 bg-white/55 px-3 py-3 text-left text-zinc-700 backdrop-blur transition hover:bg-white/75"
               >
                 <p className="flex items-center gap-2 font-semibold text-zinc-900">
@@ -161,9 +169,9 @@ export default function Home() {
                 <p className="mt-1 text-xs text-zinc-600">
                   25+5 pomodoro sayaci ile dikkat dagilimini azalt, oturumlari ritmik sekilde tamamla.
                 </p>
-              </button>
-              <button
-                type="button"
+              </a>
+              <a
+                href="#youtube-tools"
                 className="micro-button rounded-xl border border-white/50 bg-white/55 px-3 py-3 text-left text-zinc-700 backdrop-blur transition hover:bg-white/75"
               >
                 <p className="flex items-center gap-2 font-semibold text-zinc-900">
@@ -173,9 +181,9 @@ export default function Home() {
                 <p className="mt-1 text-xs text-zinc-600">
                   Konu bazli YouTube aramasiyla dogru videoyu bul, secili calisma seansina tek tikla bagla.
                 </p>
-              </button>
-              <button
-                type="button"
+              </a>
+              <a
+                href="#calendar-tools"
                 className="micro-button rounded-xl border border-white/50 bg-white/55 px-3 py-3 text-left text-zinc-700 backdrop-blur transition hover:bg-white/75"
               >
                 <p className="flex items-center gap-2 font-semibold text-zinc-900">
@@ -185,9 +193,9 @@ export default function Home() {
                 <p className="mt-1 text-xs text-zinc-600">
                   Tum plani veya tek seansi Google Takvim ya da ICS ile paylas, gundelik akisa kolayca entegre et.
                 </p>
-              </button>
-              <button
-                type="button"
+              </a>
+              <a
+                href="#alerts-center"
                 className="micro-button rounded-xl border border-white/50 bg-white/55 px-3 py-3 text-left text-zinc-700 backdrop-blur transition hover:bg-white/75"
               >
                 <p className="flex items-center gap-2 font-semibold text-zinc-900">
@@ -197,9 +205,9 @@ export default function Home() {
                 <p className="mt-1 text-xs text-zinc-600">
                   7/3/1 gun sinav uyarilari ve gunluk oturum hatirlatmalariyla calisma rutininin disina cikma.
                 </p>
-              </button>
-              <button
-                type="button"
+              </a>
+              <a
+                href="#analytics-panel"
                 className="micro-button rounded-xl border border-white/50 bg-white/55 px-3 py-3 text-left text-zinc-700 backdrop-blur transition hover:bg-white/75"
               >
                 <p className="flex items-center gap-2 font-semibold text-zinc-900">
@@ -209,7 +217,7 @@ export default function Home() {
                 <p className="mt-1 text-xs text-zinc-600">
                   Haftalik dakika ozetleri, ders dagilimlari ve streak metrikleriyle performansini gorunur kil.
                 </p>
-              </button>
+              </a>
             </div>
           </div>
         </footer>

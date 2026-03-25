@@ -42,7 +42,9 @@ export const ExamCreateForm = () => {
       }
 
       setMessage("Sinav ve konular kaydedildi, liste yenileniyor...")
-      window.location.reload()
+
+      // Dashboard'daki listeyi komple refresh yerine event ile guncelliyoruz
+      window.dispatchEvent(new Event("studyflow:exams-updated"))
     } catch {
       setMessage("Baglanti hatasi olustu")
     } finally {
@@ -110,7 +112,11 @@ export const ExamCreateForm = () => {
         </button>
       </form>
 
-      {message ? <p className="mt-3 text-sm text-zinc-600">{message}</p> : null}
+      {message ? (
+        <p className="mt-3 text-sm text-zinc-600" role="status" aria-live="polite">
+          {message}
+        </p>
+      ) : null}
     </section>
   )
 }

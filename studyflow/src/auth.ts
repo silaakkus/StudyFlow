@@ -6,6 +6,10 @@ import { prisma } from "@/lib/prisma"
 export const { handlers, auth, signIn, signOut } = NextAuth({
   adapter: PrismaAdapter(prisma),
   session: { strategy: "database" },
+  // NextAuth secret'ini production'da da stabil kullanmak için
+  // proje kullanıcıları bazen AUTH_SECRET yerine NEXTAUTH_SECRET yazıyor
+  secret: process.env.NEXTAUTH_SECRET ?? process.env.AUTH_SECRET,
+  debug: process.env.NODE_ENV !== "production",
   providers: [
     Google({
       clientId: process.env.AUTH_GOOGLE_ID,

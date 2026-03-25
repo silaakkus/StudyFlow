@@ -59,6 +59,7 @@ export const DashboardContent = () => {
 
   useEffect(() => {
     const loadExams = async () => {
+      setIsLoading(true)
       try {
         const response = await fetch("/api/exams")
         const data = await response.json()
@@ -69,6 +70,15 @@ export const DashboardContent = () => {
     }
 
     loadExams()
+
+    const handleExamsUpdated = () => {
+      loadExams()
+    }
+
+    window.addEventListener("studyflow:exams-updated", handleExamsUpdated)
+    return () => {
+      window.removeEventListener("studyflow:exams-updated", handleExamsUpdated)
+    }
   }, [])
 
   useEffect(() => {

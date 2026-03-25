@@ -13,7 +13,8 @@ const SignInPage = () => {
           className="mt-5"
           action={async () => {
             "use server"
-            await signIn("google", { redirectTo: "/" })
+            // next-auth v4: server-side signIn uses `callbackUrl`
+            await signIn("google", { callbackUrl: "/" })
           }}
         >
           <button
