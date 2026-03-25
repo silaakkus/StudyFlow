@@ -21,6 +21,20 @@ export const ExamCreateForm = () => {
       .map((topic) => topic.trim())
       .filter(Boolean)
 
+    const parsedExamDate = new Date(examDate)
+    if (!examDate || Number.isNaN(parsedExamDate.getTime())) {
+      setMessage("Lutfen gecerli bir sinav tarihi sec")
+      setIsSubmitting(false)
+      return
+    }
+
+    // Tarih gecmisse kullanıcıya direkt uyarı göster (backend tarafı da doğrular)
+    if (parsedExamDate.getTime() <= Date.now()) {
+      setMessage("Sinav tarihi gecmis olamaz")
+      setIsSubmitting(false)
+      return
+    }
+
     try {
       const response = await fetch("/api/exams", {
         method: "POST",
