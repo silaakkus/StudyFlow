@@ -13,7 +13,7 @@ export const UserMenu = () => {
   if (!session) {
     return (
       <a
-        href="/api/auth/signin"
+        href="/auth/signin"
         className="micro-button group relative overflow-hidden rounded-xl bg-gradient-to-r from-violet-600 via-fuchsia-500 to-sky-500 px-5 py-2.5 text-sm font-semibold text-white shadow-xl ring-2 ring-white/40 transition hover:scale-[1.04] hover:from-violet-500 hover:via-fuchsia-400 hover:to-sky-400"
       >
         <span className="hero-shimmer pointer-events-none absolute inset-y-0 left-0 w-16 bg-white/70 blur-md" />
